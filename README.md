@@ -72,7 +72,7 @@ pytest tests/test_math_operations.py
 ```
 ### Run a specific test function:
 ```sh
-pytest tests/t_test.py::test_add
+pytest t_test.py::test_add
 ```
 ### Run only tests marked as fast:
 ```sh
