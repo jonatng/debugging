@@ -11,7 +11,7 @@
 
 ########## Sample Unit Tests ############
 import pytest
-from bugs import add, calculate_average, reverse_string, find_max
+from bugs import add, calculate_average, reverse_string, find_max, merge_lists, count_vowels, remove_duplicates, is_palindrome, count_words
 
 @pytest.mark.fast
 def test_add():
@@ -65,3 +65,42 @@ def test_is_prime():
     assert is_prime(8) == False
     assert is_prime(9) == False
     assert is_prime(10) == False
+
+# Fixing the bug in the merge_lists function
+def test_merge_lists():
+    assert merge_lists([1, 3, 5], [2, 4, 6]) == [1, 2, 3, 4, 5, 6]
+    assert merge_lists([], []) == []
+    assert merge_lists([1], [2]) == [1, 2]
+    assert merge_lists([1], []) == [1]
+    assert merge_lists([], [2]) == [2]
+    
+# Fixing the bug in the count_vowels function
+def test_count_vowels():
+    assert count_vowels("Hello") == 2
+    assert count_vowels("aeiou") == 5
+    assert count_vowels("xyz") == 0
+    assert count_vowels("") == 0
+    assert count_vowels("AEIOU") == 5
+
+# Fixing the bug in the remove_duplicates function
+def test_remove_duplicates():
+    assert remove_duplicates([1, 2, 2, 3, 4]) == [1, 2, 3, 4]
+    assert remove_duplicates([1, 1, 1]) == [1]
+    assert remove_duplicates([]) == []
+    assert remove_duplicates([1]) == [1]
+    assert remove_duplicates([1, 2, 3]) == [1, 2, 3]
+    assert remove_duplicates([3, 1, 2, 3, 4, 2, 1]) == [1, 2, 3, 4]
+
+# Fixing the bug in the is_palindrome function
+def test_is_palindrome():
+    assert is_palindrome("racecar") == True
+    assert is_palindrome("hello") == False
+    assert is_palindrome("") == True
+    
+# Fixing the bug in the count_words function
+def test_count_words():
+    assert count_words("Hello world this is Python") == 5
+    assert count_words("This is a test") == 4
+    assert count_words("") == 0
+    assert count_words("SingleWord") == 1
+    assert count_words("   ") == 0

@@ -34,3 +34,36 @@ def is_prime(n):
         if n % i == 0:
             return False
     return True
+
+# This function merges two lists and sorts them
+def merge_lists(list1, list2):
+    return sorted(list1 + list2)
+print(merge_lists)
+
+# This function counts the number of vowels in a string
+def count_vowels(s):
+    vowels = "aeiouAEIOU"
+    count = 0
+    for char in s:
+        if char in vowels:
+            count += 1
+    return count
+
+# This function removes duplicates from a list
+def remove_duplicates(x):
+    return sorted(dict.fromkeys(x))
+
+# This function checks if a string is a palindrome
+def is_palindrome(s):
+    s = s.lower().replace(" ", "")  # Convert to lowercase and remove spaces
+    for i in range(len(s) // 2): # This loop ensures that we only iterate halfway through the string since a palindrome check requires comparing symmetric pairs from the start and end.
+        if s[i] != s[-i-1]:  # Bug: Incorrect indexing
+            print(f"'{s}' is not a palindrome")
+            return False
+    print(f"'{s}' is a palindrome")
+    return True
+
+# This function counts the number of words in a sentence
+def count_words(sentence):
+    words = sentence.split()
+    return len(words)  
